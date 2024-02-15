@@ -8,10 +8,9 @@ const postCollection = defineCollection({
       description: z.string(),
       tags: z.array(z.string()),
       image: image(),
-      imageSrc: z.string(),
     }),
 });
 
 export const collections = {
-  post: postCollection,
+  blog: postCollection,
 };

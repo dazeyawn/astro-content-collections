@@ -7,11 +7,12 @@ export const getStaticPaths = async () => {
   const blogEntries = await getCollection("blog");
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry: entry },
   }));
 };
 
 const { entry } = Astro.props;
+console.log(entry);
 const { Content } = await entry.render();
 ---
 
